@@ -8,55 +8,40 @@ npm run dev
 
 ## Configuration changes made after `create-next-app`
 
-### tailwind.config.ts
+### Jest
 
-From:
+[https://nextjs.org/docs/app/building-your-application/testing/jest](https://nextjs.org/docs/app/building-your-application/testing/jest)
 
-```ts
-const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-};
-```
-
-To:
+#### jest.config.js
 
 ```ts
+import type { Config } from 'jest'
+import nextJest from 'next/jest.js'
+ 
+const createJestConfig = nextJest({
+  // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+  dir: './',
+})
+ 
+// Add any custom config to be passed to Jest
 const config: Config = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-};
-```
-
-### tsconfig.json
-
-From:
-
-```json
-{
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
+  coverageProvider: 'v8',
+  testEnvironment: 'jsdom',
+  // Add more setup options before each test is run
+  // setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 }
+ 
+// createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
+export default createJestConfig(config)
 ```
 
-To:
+#### package.json
 
 ```json
 {
-  "compilerOptions": {
-    "target": "es6",
-    "paths": {
-      "@/*": ["./*"]
-    }
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
   }
 }
 ```
@@ -76,3 +61,28 @@ const nextConfig = {
   output: 'standalone',
 };
 ```
+
+## Update public resources
+
+Download
+
+`node_modules/highlight.js/styles/github.css`
+`node_modules/highlight.js/styles/github-dark.css`
+
+to
+
+`public/css/highlight/github.css`
+`public/css/highlight/github-dark.css`
+.
+
+Download
+`node_modules/github-markdown-css/github-markdown.css`
+`node_modules/github-markdown-css/github-markdown-light.css`
+`node_modules/github-markdown-css/github-markdown-dark.css`
+
+to
+
+`public/css/markdown/github-markdown.css`
+`public/css/markdown/github-markdown-light.css`
+`public/css/markdown/github-markdown-dark.css`
+.

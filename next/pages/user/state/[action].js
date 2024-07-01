@@ -47,11 +47,18 @@ function Action() {
   };
 
   const handleSignUp = async () => {
-    if (!userLogic.validateInput(username) || !userLogic.validateInput(password)) {
-      setAlertMessage("Username or Password contains invalid characters or has an invalid length.");
+    if (!userLogic.validateInput(username)) {
+      setAlertMessage("Username must be 4-32 ASCII characters.");
       setAlertOpen(true);
       return;
     }
+
+    if (!userLogic.validateInput(password)) {
+      setAlertMessage("Password must be 4-32 ASCII characters.");
+      setAlertOpen(true);
+      return;
+    }
+
     try {
       await userLogic.signUp(username, password);
       setAlertMessage("Sign up success");
@@ -66,36 +73,38 @@ function Action() {
   return (
     <ThemeProvider theme={muiTheme}>
       <CssBaseline enableColorScheme/>
-      <HeaderAppBar
-        title={title}
-        useAuthDiv={false}
-        systemTheme={systemTheme}
-        setSystemTheme={setSystemTheme}
-      />
-      <div className="flex-center">
-        <div className="text-center">
-          <div className="m-2">
-            <TextField
-              label="Username"
-              variant="outlined"
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="mt-2"
-            />
-          </div>
-          <div className="m-2">
-            <TextField
-              label="Password"
-              variant="outlined"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="mt-2"
-            />
-          </div>
-          <div className="m-2">
-            <Button variant="contained" onClick={action === 'signin' ? handleSignIn : handleSignUp}>{title}</Button>
+      <div className="local-scroll-root">
+        <HeaderAppBar
+          title={title}
+          useAuthDiv={false}
+          systemTheme={systemTheme}
+          setSystemTheme={setSystemTheme}
+        />
+        <div className="local-scroll-scrollable flex-center">
+          <div className="text-center">
+            <div className="m-2">
+              <TextField
+                label="Username"
+                variant="outlined"
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="mt-2"
+              />
+            </div>
+            <div className="m-2">
+              <TextField
+                label="Password"
+                variant="outlined"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="mt-2"
+              />
+            </div>
+            <div className="m-2">
+              <Button variant="contained" onClick={action === 'signin' ? handleSignIn : handleSignUp}>{title}</Button>
+            </div>
           </div>
         </div>
       </div>

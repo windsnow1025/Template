@@ -1,12 +1,19 @@
-import { AppBar, IconButton, Typography, Menu, MenuItem } from "@mui/material";
-import AuthDiv from "./AuthDiv";
-import ThemeSelect from "./ThemeSelect";
+import { AppBar, IconButton, Typography, Menu, MenuItem, Tooltip } from "@mui/material";
+import AuthDiv from "./user/AuthDiv";
+import ThemeToggle from "./ThemeToggle";
 import React, { useState } from "react";
-import HomeIcon from '@mui/icons-material/Home';
 import MenuIcon from '@mui/icons-material/Menu';
+import InfoIcon from '@mui/icons-material/Info';
 import Link from 'next/link';
 
-const HeaderAppBar = ({ title, useAuthDiv = true, systemTheme, setSystemTheme }) => {
+const HeaderAppBar = ({
+                        title,
+                        useAuthDiv = true,
+                        systemTheme,
+                        setSystemTheme,
+                        refreshKey,
+                        infoUrl
+                      }) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleMenuOpen = (event) => {
@@ -18,30 +25,52 @@ const HeaderAppBar = ({ title, useAuthDiv = true, systemTheme, setSystemTheme })
   };
 
   return (
-    <AppBar position="static" color="secondary">
+    <AppBar position="static" color="primary">
       <div className="flex-around p-2">
-        <IconButton aria-label="menu" onClick={handleMenuOpen}>
-          <MenuIcon fontSize="large" />
-        </IconButton>
+        <Tooltip title="Menu">
+          <IconButton aria-label="menu" onClick={handleMenuOpen}>
+            <MenuIcon
+              fontSize="large"
+              className="text-white"
+            />
+          </IconButton>
+        </Tooltip>
         <Menu
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
           onClose={handleMenuClose}
         >
-          <MenuItem component={Link} href="/page1" onClick={handleMenuClose}>Page1</MenuItem>
-          <MenuItem component={Link} href="/page2" onClick={handleMenuClose}>Page2</MenuItem>
-          <MenuItem component={Link} href="/page3" onClick={handleMenuClose}>Page3</MenuItem>
+          <MenuItem component={Link} href="/markdown" onClick={handleMenuClose}>Markdown Blogs</MenuItem>
+          <MenuItem component={Link} href="/bookmark" onClick={handleMenuClose}>Bookmarks</MenuItem>
+          <MenuItem component={Link} href="/message" onClick={handleMenuClose}>Message Transmitter</MenuItem>
+          <MenuItem component={Link} href="/password" onClick={handleMenuClose}>Password Generator</MenuItem>
+          <MenuItem component={Link} href="/image" onClick={handleMenuClose}>Image Generate</MenuItem>
+          <MenuItem component={Link} href="/chat" onClick={handleMenuClose}>AI Chat</MenuItem>
         </Menu>
-        <Typography variant="h4" className="grow">
+        <Typography variant="h4">
           {title}
         </Typography>
+        {infoUrl && (
+          <Tooltip title="More Information">
+            <IconButton
+              component="a"
+              href={infoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="information"
+            >
+              <InfoIcon fontSize="large" className="text-white" />
+            </IconButton>
+          </Tooltip>
+        )}
+        <div className="grow"></div>
         {useAuthDiv &&
-          <div className="m-1">
-            <AuthDiv />
+          <div className="m-1 mx-2">
+            <AuthDiv refreshKey={refreshKey} />
           </div>
         }
-        <div className="m-1">
-          <ThemeSelect
+        <div className="m-1 mx-2">
+          <ThemeToggle
             systemTheme={systemTheme}
             setSystemTheme={setSystemTheme}
           />
