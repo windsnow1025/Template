@@ -1,0 +1,55 @@
+# <Project Name>
+
+## Development
+
+### Python uv
+
+1. Install uv: `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`
+2. Install Python in uv: `uv python install 3.12`; upgrade Python in uv: `uv python upgrade 3.12`
+3. Configure requirements:
+  ```bash
+  uv sync --refresh
+  ```
+
+### Pycharm
+
+1. Add New Interpreter >> Add Local Interpreter
+  - Environment: Select existing
+  - Type: uv
+2. Add New Configuration >> uv run >> Script: `./app/main.py` (Optional)
+2. Add New Configuration >> uv run (Optional)
+- Run: `Module`
+- Module: `uvicorn`
+- Arguments: `app.main:app --reload --host 127.0.0.1 --port 8000`
+
+
+### Test (Optional)
+
+```bash
+uv run pytest
+```
+
+### Build (Optional)
+
+```bash
+uv build
+```
+
+## OpenAPI (Optional)
+
+### Requirements
+
+1. Install openapi-generator-cli globally.
+  ```bash
+  npm i -g @openapitools/openapi-generator-cli@latest
+  ```
+2. Install Java.
+
+### Generate Client Package
+
+```bash
+rm -r <Target File Path>
+```
+```bash
+openapi-generator-cli generate -i http://localhost:8000/openapi.json -g typescript-axios -o <Target File Path>
+```
