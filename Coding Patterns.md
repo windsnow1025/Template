@@ -5,6 +5,14 @@
 - Parameter ordering follows functional intent.
 - Use official SDKs for external APIs and encapsulate request methods in client files.
 
+## Directory Structure
+
+```
+project/
+├── .env
+├── .env.example
+```
+
 ## Python
 
 ### Parameters & Arguments
@@ -21,12 +29,11 @@
 
 - No type annotations.
 
-#### Directory structure
+#### Directory Structure
 
 ```
 project/
 ├── app/
-│   ├── main.py
 │   ├── config.py
 │   ├── utils.py
 │   ├── input.py
@@ -35,4 +42,18 @@ project/
 ├── data/
 ├── output/
 └── docs/
+```
+
+- Single main script:
+```
+project/
+├── app/
+│   ├── main.py
+```
+
+- Multiple scripts:
+```
+project/
+├── app/
+│   ├── scripts/
 ```
