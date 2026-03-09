@@ -12,12 +12,6 @@
 
 Settings >> Languages & Frameworks >> JavaScript Runtime >> Package manager: `pnpm`
 
-### Run
-
-```bash
-pnpm run dev
-```
-
 ## OpenAPI (Optional)
 
 ### Requirements
