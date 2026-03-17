@@ -23,10 +23,16 @@ Add New Interpreter >> Add Local Interpreter
 uv run pytest
 ```
 
-### Build (Optional)
+### Build Library (Optional)
 
 ```bash
 uv build
+```
+
+### Build Executable (Optional)
+
+```bash
+uv run pyinstaller --onefile app/main.py
 ```
 
 ## OpenAPI (Optional)
