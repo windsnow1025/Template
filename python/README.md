@@ -17,12 +17,6 @@ Add New Interpreter >> Add Local Interpreter
   - Environment: Select existing
   - Type: uv
 
-### Test (Optional)
-
-```bash
-uv run pytest
-```
-
 ### Build Library (Optional)
 
 ```bash

@@ -4,6 +4,12 @@
 
 Add New Configuration >> uv run >> Script: `./app/main.py`
 
+### Test
+
+```bash
+uv run pytest
+```
+
 ## uvicorn
 
 Add New Configuration >> uv run
