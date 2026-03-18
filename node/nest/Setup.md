@@ -1,7 +1,7 @@
 # Nest.js Setup
 
 ```bash
-pnpm i -g @nestjs/cli
+pnpm add -g @nestjs/cli
 nest new <project-name>
 ```
 
