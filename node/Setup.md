@@ -12,3 +12,9 @@ ncu -u
 ```bash
 npm unpublish <package-name>@<version>
 ```
+
+## Run a single TypeScript file
+
+```bash
+npx ts-node <filepath>
+```
