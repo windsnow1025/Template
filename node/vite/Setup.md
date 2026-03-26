@@ -12,8 +12,6 @@ pnpm add -D vitest
 
 ## package.json
 
-Add:
-
 ```json
 {
   "packageManager": "pnpm@<version>",
@@ -35,7 +33,8 @@ pnpm add @mui/icons-material
 pnpm install tailwindcss @tailwindcss/vite
 ```
 
-Add in `vite.config.ts`:
+#### vite.config.ts
+
 ```ts
 import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({

@@ -7,18 +7,6 @@ nest new <project-name>
 
 ## package.json
 
-From:
-
-```json
-{
-  "scripts": {
-    "start:prod": "node dist/main"
-  }
-}
-```
-
-To:
-
 ```json
 {
   "scripts": {
@@ -29,7 +17,6 @@ To:
 
 ## .prettierrc
 
-Add:
 
 ```ts
 module.exports = {
@@ -46,21 +33,6 @@ module.exports = {
 
 ## tsconfig.json
 
-From:
-
-```json
-{
-  "compilerOptions": {
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
-  }
-}
-```
-
-To:
 
 ```json
 {
