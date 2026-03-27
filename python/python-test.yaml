@@ -9,9 +9,16 @@ on:
   push:
     branches:
       - "main"
+#      - "test"
+#    paths:
+#      - '<path>/**'
+#      - '.github/workflows/<name>-python-test.yaml'
   pull_request:
     branches:
       - "main"
+#    paths:
+#      - '<path>/**'
+#      - '.github/workflows/<name>-python-test.yaml'
 
 jobs:
   uv:
@@ -24,10 +31,13 @@ jobs:
       - name: Enable caching
         uses: astral-sh/setup-uv@v7
         with:
+#          cache-dependency-glob: "<path>/uv.lock"
           enable-cache: true
 
       - name: Install the project
+#        working-directory: ./<path>
         run: uv sync --locked --all-extras --dev
 
       - name: Run tests
+#        working-directory: ./<path>
         run: uv run pytest tests
