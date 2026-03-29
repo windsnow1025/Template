@@ -1,7 +1,8 @@
 # Coding Patterns
 
-- Constants use `Pascal_Case`.
+- Constants use `PascalCase`.
 - Avoid silencing errors (e.g., try-catch and conditional guards that skip failures).
+- Avoid patch-style fallback logic (e.g., adding workarounds or special-case handling instead of fixing the root cause).
 - Parameter ordering follows functional intent.
 - Use official SDKs for external APIs and encapsulate request methods in client files.
 
@@ -35,9 +36,9 @@ project/
 project/
 ├── app/
 │   ├── config.py
-│   ├── utils.py
-│   ├── input.py
-│   ├── output.py
+│   ├── utils/
+│   │   ├── input.py
+│   │   └── output.py
 │   └── core/
 ├── data/
 ├── output/
