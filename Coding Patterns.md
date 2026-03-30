@@ -12,7 +12,13 @@
 project/
 ├── .env
 ├── .env.example
+├── .gitignore
 ```
+
+## Template Files
+
+- Template files (`.gitignore`, `Dockerfile`, `.dockerignore`, GitHub Actions `.yaml`, etc.) start with a comment linking to the source template.
+- Ignore files (`.gitignore`, `.dockerignore`) append a `# Custom` section at the end for project-specific entries.
 
 ## Python
 
