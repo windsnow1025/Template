@@ -10,6 +10,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+#    "nbconvert", # ipynb convert
 ]
 
 # https://docs.astral.sh/uv/guides/integration/pytorch/
