@@ -64,3 +64,7 @@ project/
 ├── app/
 │   ├── scripts/
 ```
+
+## React
+
+CSS priority: global CSS > Tailwind > inline style
