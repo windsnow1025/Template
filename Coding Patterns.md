@@ -68,3 +68,13 @@ project/
 ## React
 
 CSS priority: global CSS > Tailwind > inline style
+
+### Directory Structure
+
+```
+project/
+├── src/
+│   ├── components/
+│   ├── data/
+│   └── lib/
+```
