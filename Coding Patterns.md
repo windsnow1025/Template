@@ -1,6 +1,7 @@
 # Coding Patterns
 
 - Constants use `PascalCase`.
+- Avoid default and optional parameters unless there is a use case for calling without the argument.
 - Avoid silencing errors (e.g., try-catch and conditional guards that skip failures).
 - Avoid patch-style fallback logic (e.g., adding workarounds or special-case handling instead of fixing the root cause).
 - Parameter ordering follows functional intent.
@@ -21,11 +22,6 @@ project/
 - Ignore files (`.gitignore`, `.dockerignore`) append a `# Custom` section at the end for project-specific entries.
 
 ## Python
-
-### Parameters & Arguments
-
-- Avoid default parameter values unless `None`.
-- Avoid keyword arguments unless default value.
 
 ### Non-ML Project Requirements
 
