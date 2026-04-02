@@ -8,6 +8,18 @@ pnpm dlx create-electron-app@latest <app_name> --template=vite-typescript
 pnpm install -D @electron-forge/publisher-github
 ```
 
+## main.ts
+
+```ts
+const createWindow = () => {
+    const mainWindow = new BrowserWindow({
+        webPreferences: {
+            webSecurity: false,
+        },
+    });
+};
+```
+
 ## Vite
 
 ### React
