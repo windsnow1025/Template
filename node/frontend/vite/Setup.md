@@ -23,7 +23,7 @@ pnpm add -D vitest
 ### Tailwind CSS
 
 ```bash
-pnpm install tailwindcss @tailwindcss/vite
+pnpm add tailwindcss @tailwindcss/vite
 ```
 
 #### vite.config.ts
