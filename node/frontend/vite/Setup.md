@@ -20,13 +20,6 @@ pnpm add -D vitest
 
 ## Dependencies
 
-### MUI
-
-```bash
-pnpm add @mui/material @emotion/react @emotion/styled
-pnpm add @mui/icons-material
-```
-
 ### Tailwind CSS
 
 ```bash
