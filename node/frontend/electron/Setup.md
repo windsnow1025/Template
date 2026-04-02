@@ -17,6 +17,16 @@ pnpm add react react-dom
 pnpm add -D @types/react @types/react-dom
 ```
 
+#### tsconfig.json
+
+```json
+{
+  "compilerOptions": {
+    "jsx": "react-jsx"
+  }
+}
+```
+
 ### Tailwind CSS
 
 ```bash
