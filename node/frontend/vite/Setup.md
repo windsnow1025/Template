@@ -30,6 +30,7 @@ pnpm add tailwindcss @tailwindcss/vite
 
 ```ts
 import tailwindcss from '@tailwindcss/vite'
+
 export default defineConfig({
   plugins: [
     tailwindcss(),
