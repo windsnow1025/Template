@@ -1,11 +1,15 @@
 # Coding Patterns
 
 - Constants use `PascalCase`.
-- Avoid default and optional parameters unless there is a use case for calling without the argument.
-- Avoid silencing errors (e.g., try-catch and conditional guards that skip failures).
-- Avoid patch-style fallback logic (e.g., adding workarounds or special-case handling instead of fixing the root cause).
 - Parameter ordering follows functional intent.
 - Use official SDKs for external APIs and encapsulate request methods in client files.
+- Avoid optional parameters unless there is a use case for calling without the argument.
+- Avoid patch-style fallback logic (e.g., adding workarounds or special-case handling instead of fixing the root cause).
+
+## Error Handling
+
+- An error boundary is where a failure is translated to a user-facing artifact. Catch exceptions or branch on error values only at error boundaries or for recoverable I/O failures.
+- An invariant is a condition whose failure indicates a bug rather than a business-allowed state. Enforce it with language-level assertions or non-null type assertions, not try-catch or conditional guards.
 
 ## Directory Structure
 
