@@ -1,4 +1,4 @@
-# Coding Patterns
+# Coding Conventions
 
 - Constants use `PascalCase`.
 - Parameter ordering follows functional intent.
