@@ -14,7 +14,7 @@ pnpm add -D vitest
 
 ```json
 {
-  "packageManager": "pnpm@<version>",
+  "packageManager": "pnpm@<version>"
 }
 ```
 
@@ -35,5 +35,23 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
+})
+```
+
+### Vite PWA
+
+```bash
+pnpm add -D vite-plugin-pwa
+```
+
+#### vite.config.ts
+
+```ts
+import { VitePWA } from 'vite-plugin-pwa'
+
+export default defineConfig({
+  plugins: [
+    VitePWA({ registerType: 'autoUpdate' })
+  ]
 })
 ```
