@@ -42,6 +42,7 @@ export default defineConfig({
 
 ```bash
 pnpm add -D vite-plugin-pwa
+pnpm add -D @vite-pwa/assets-generator
 ```
 
 #### vite.config.ts
@@ -51,7 +52,28 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
   plugins: [
-    VitePWA({ registerType: 'autoUpdate' })
-  ]
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.svg'],
+      manifest: {
+        name: '<Name>',
+        short_name: '<Short Name>',
+        description: '<Description>',
+        theme_color: '#121212',
+        icons: [
+          {
+            src: 'favicon.svg',
+            sizes: 'any',
+            type: 'image/svg+xml'
+          }
+        ]
+      },
+      // pwa assets
+      pwaAssets: {
+        // options
+      }
+    })
+  ],
 })
+
 ```
