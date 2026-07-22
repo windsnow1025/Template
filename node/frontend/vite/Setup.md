@@ -60,13 +60,6 @@ export default defineConfig({
         short_name: '<Short Name>',
         description: '<Description>',
         theme_color: '#121212',
-        icons: [
-          {
-            src: 'favicon.svg',
-            sizes: 'any',
-            type: 'image/svg+xml'
-          }
-        ]
       },
       // pwa assets
       pwaAssets: {
