@@ -12,11 +12,11 @@ pnpm install -D @electron-forge/publisher-github
 
 ```ts
 const createWindow = () => {
-    const mainWindow = new BrowserWindow({
-        webPreferences: {
-            webSecurity: false,
-        },
-    });
+  const mainWindow = new BrowserWindow({
+    webPreferences: {
+      webSecurity: false,
+    },
+  });
 };
 ```
 
