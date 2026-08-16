@@ -1,6 +1,7 @@
 # Coding Conventions
 
 - Constants use `PascalCase`.
+- Shadowing an outer binding is allowed.
 - Parameter ordering follows functional intent.
 - Use official SDKs for external APIs and encapsulate request methods in client files.
 - Avoid optional parameters unless there is a use case for calling without the argument.
