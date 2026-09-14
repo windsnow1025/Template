@@ -17,7 +17,6 @@ nest new <project-name>
 
 ## .prettierrc
 
-
 ```ts
 module.exports = {
   rules: {
