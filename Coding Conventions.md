@@ -5,12 +5,16 @@
 - Parameter and function ordering follows functional intent.
 - Use official SDKs for external APIs and encapsulate request methods in client files.
 - Avoid optional parameters unless there is a use case for calling without the argument.
-- Avoid patch-style fallback logic (e.g., adding workarounds or special-case handling instead of fixing the root cause).
+- Avoid fallback logic that substitutes for fixing the root cause.
+- Avoid silent failure, in which a success is reported but not reached.
 
 ## Error Handling
 
-- An error boundary is where a failure is translated to a user-facing artifact. Catch exceptions or branch on error values only at error boundaries or for recoverable I/O failures.
-- An invariant is a condition whose failure indicates a bug rather than a business-allowed state. Enforce it with language-level assertions or non-null type assertions, not try-catch or conditional guards.
+An operation ends with a verdict or with a failure. A verdict is a judgment within the operation's contract on its input and the state it examines. A failure is the operation ending without a verdict, caused by the environment or by a violated invariant. An invariant is a condition the program itself guarantees.
+
+- A non-success verdict is signaled in its agreed form.
+- A failure propagates to the error boundary, which translates it to what the consumer reads.
+- An invariant is enforced by an assertion, not by a guard.
 
 ## Directory Structure
 
