@@ -3,6 +3,21 @@
 /*@import "tailwindcss/preflight.css" layer(base);*/
 @import "tailwindcss/utilities.css" layer(utilities);
 
+/* Global */
+html {
+    overflow: hidden;
+}
+
+/* Markdown */
+.markdown-body table {
+    display: table !important;
+}
+
+/* Next.JS */
+nextjs-portal {
+    display: none;
+}
+
 /* Customize */
 .flex-normal {
     display: flex;
@@ -62,6 +77,13 @@
     display: flex;
     justify-content: start;
     align-items: start;
+    flex-wrap: wrap;
+}
+
+.flex-end-center {
+    display: flex;
+    justify-content: end;
+    align-items: center;
     flex-wrap: wrap;
 }
 
