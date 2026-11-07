@@ -16,6 +16,11 @@ An operation ends with a verdict or with a failure. A verdict is a judgment with
 - A failure propagates to the error boundary, which translates it to what the consumer reads.
 - An invariant is enforced by an assertion, not by a guard.
 
+## Preferences
+
+- Avoid Defensive Programming.
+- Avoid redundant explanatory descriptive text. Let the layout do the explaining.
+
 ## Directory Structure
 
 ```
