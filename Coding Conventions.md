@@ -30,6 +30,15 @@ project/
 - Template files (`.gitignore`, `Dockerfile`, `.dockerignore`, GitHub Actions `.yaml`, etc.) start with a comment linking to the source template.
 - Ignore files (`.gitignore`, `.dockerignore`) append a `# Custom` section at the end for project-specific entries.
 
+## Machine Learning
+
+A model that chooses actions from states has the following properties:
+
+- Lossless State Representation (Injective Encoding)
+- Complete Action Space
+- Complete Model Expressiveness (Universal Approximation)
+- Configuration Independence (Inductive Learning)
+
 ## Python
 
 ### Non-ML Project Requirements
